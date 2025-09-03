@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face-Tracking Mouse Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;70--font-weight-bold:700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #d1d5db;
+        }
+        .feature-card, .step-card, .trouble-card {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+        }
+        .code-block {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+        .btn-secondary {
+            background-color: #374151;
+            transition: background-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #4b5563;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="max-w-4xl mx-auto p-6 md:p-8">
+
+        <!-- Header Section -->
+        <header class="text-center py-12 border-b border-gray-700">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Face-Tracking Mouse Control</h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                A hands-free way to navigate your desktop, click, and scroll using only your head and facial gestures.
+            </p>
+            <a href="https://github.com/ficcc/facetracking" target="_blank" class="btn-primary text-white font-semibold py-3 px-8 rounded-lg inline-flex items-center">
+                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                View on GitHub
+            </a>
+        </header>
+
+        <!-- Features Section -->
+        <section id="features" class="py-16">
+            <h2 class="text-3xl font-bold text-white text-center mb-10">Features</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-white mb-2">🖱️ Relative Mouse Movement</h3>
+                    <p class="text-gray-400">Move your head to move the cursor like a virtual joystick, providing intuitive and precise control.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-white mb-2">👀 Reliable Wink-to-Click</h3>
+                    <p class="text-gray-400">Click by holding a wink. Time-based detection prevents misfires from normal blinks.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-white mb-2">📜 Scroll Mode</h3>
+                    <p class="text-gray-400">Toggle a scroll mode by opening your mouth, then move your head up and down to scroll seamlessly.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-white mb-2">⚙️ Interactive Calibration</h3>
+                    <p class="text-gray-400">A guided setup process tunes the controls to your specific face for maximum accuracy.</p>
+                </div>
+                 <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-white mb-2">🔄 On-the-Fly Re-centering</h3>
+                    <p class="text-gray-400">Press 'r' to re-calibrate your neutral "center" position anytime you shift in your chair.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-white mb-2">📊 Live Visual Feedback</h3>
+                    <p class="text-gray-400">An on-screen display shows facial landmarks and a live data debugger for clear gesture interpretation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup Instructions -->
+        <section id="setup" class="py-16 border-t border-gray-700">
+            <h2 class="text-3xl font-bold text-white text-center mb-10">🚀 Setup Workflow</h2>
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="step-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-white mb-3">Step 1: Get the Code</h3>
+                    <p class="text-gray-400 mb-4">Download the project files from the GitHub repository. You'll need `face_mouse.py`, `setup.bat`, and `launch.bat`.</p>
+                    <a href="https://github.com/ficcc/facetracking" target="_blank" class="btn-secondary text-white font-semibold py-2 px-4 rounded-lg inline-block">Download from GitHub</a>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-white mb-3">Step 2: Run Automated Setup</h3>
+                    <p class="text-gray-400 mb-4">Double-click the <code class="bg-gray-800 text-yellow-400 px-2 py-1 rounded">setup.bat</code> file. This script automatically creates a virtual environment and installs all required Python libraries.</p>
+                    <p class="text-gray-400 text-sm">For non-Windows users, run these commands in your terminal:</p>
+                    <div class="code-block mt-2 p-4 rounded-lg text-sm overflow-x-auto">
+                        <pre><code># Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Linux/macOS
+# or
+.\\venv\\Scripts\\activate  # On Windows
+
+# Install packages
+pip install opencv-python dlib numpy pyautogui imutils</code></pre>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-white mb-3">Step 3: Download Facial Landmark Model</h3>
+                    <p class="text-gray-400 mb-4">The script requires a pre-trained model to detect facial landmarks. Download the file, unzip it, and place it in the same folder as <code class="bg-gray-800 text-yellow-400 px-2 py-1 rounded">face_mouse.py</code>.</p>
+                    <a href="http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2" class="btn-secondary text-white font-semibold py-2 px-4 rounded-lg inline-block">Download Model</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use -->
+        <section id="usage" class="py-16 border-t border-gray-700">
+            <h2 class="text-3xl font-bold text-white text-center mb-10">🕹️ How to Use</h2>
+            <ol class="list-decimal list-inside space-y-4 text-gray-300">
+                <li>Double-click <code class="bg-gray-800 text-yellow-400 px-2 py-1 rounded">launch.bat</code> to start the application.</li>
+                <li>Follow the on-screen instructions to calibrate the controls by performing gestures and pressing 'c'.</li>
+                <li>The application will start **PAUSED**. Use the in-app controls below to navigate.</li>
+            </ol>
+            <div class="mt-8 overflow-x-auto">
+                <table class="w-full text-left border border-gray-700 rounded-lg">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="p-4">Key</th>
+                            <th class="p-4">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4"><code class="bg-gray-700 text-yellow-400 px-2 py-1 rounded">spacebar</code></td>
+                            <td class="p-4">**Pause / Resume** all controls.</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                             <td class="p-4"><code class="bg-gray-700 text-yellow-400 px-2 py-1 rounded">r</code></td>
+                            <td class="p-4">**Re-center** the neutral mouse point.</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                             <td class="p-4"><code class="bg-gray-700 text-yellow-400 px-2 py-1 rounded">q</code></td>
+                            <td class="p-4">**Quit** the application.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Configuration -->
+        <section id="config" class="py-16 border-t border-gray-700">
+            <h2 class="text-3xl font-bold text-white text-center mb-10">🛠️ Configuration & Tuning</h2>
+            <p class="text-center text-gray-400 mb-6">Fine-tune performance by editing these variables at the top of the <code class="bg-gray-800 text-yellow-400 px-2 py-1 rounded">face_mouse.py</code> script.</p>
+            <div class="code-block p-4 rounded-lg text-sm overflow-x-auto relative">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 btn-secondary text-white text-xs py-1 px-2 rounded">Copy</button>
+                <pre><code id="config-code"># --- CONFIGURATION --- #
+WINK_HOLD_DURATION = 1.0      # Seconds to hold a wink.
+MOUSE_SENSITIVITY = 1.5       # Lower for slower movement, higher for faster.
+SCROLL_SENSITIVITY = 0.5      # Adjusts scrolling speed.
+DEAD_ZONE_RADIUS = 7          # The radius (pixels) where no mouse movement occurs.</code></pre>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section id="troubleshooting" class="py-16 border-t border-gray-700">
+             <h2 class="text-3xl font-bold text-white text-center mb-10">🤔 Troubleshooting</h2>
+             <div class="space-y-4">
+                <div class="trouble-card rounded-lg">
+                    <details class="p-6">
+                        <summary class="font-semibold text-white cursor-pointer">Error building wheel for `dlib`</summary>
+                        <p class="text-gray-400 mt-2">This means you need build tools. Install CMake and Visual Studio with the "Desktop development with C++" workload.</p>
+                    </details>
+                </div>
+                 <div class="trouble-card rounded-lg">
+                    <details class="p-6">
+                        <summary class="font-semibold text-white cursor-pointer">`can't grab frame` error</summary>
+                        <p class="text-gray-400 mt-2">Another app (Zoom, Teams, etc.) is using your webcam. Close all other apps or reboot. Also, check Windows privacy settings to allow desktop apps to access the camera.</p>
+                    </details>
+                </div>
+                <div class="trouble-card rounded-lg">
+                    <details class="p-6">
+                        <summary class="font-semibold text-white cursor-pointer">Mouse movement is erratic</summary>
+                        <p class="text-gray-400 mt-2">Press the 'r' key to re-center the neutral point. Ensure you are in a well-lit environment and facing the camera directly.</p>
+                    </details>
+                </div>
+             </div>
+        </section>
+
+    </div>
+
+    <footer class="text-center py-8 mt-12 border-t border-gray-800">
+        <p class="text-gray-500">Project by ficcc on GitHub.</p>
+    </footer>
+
+    <script>
+        function copyCode(button) {
+            const code = document.getElementById('config-code').innerText;
+            const el = document.createElement('textarea');
+            el.value = code;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            button.innerText = 'Copied!';
+            setTimeout(() => {
+                button.innerText = 'Copy';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
